@@ -1,0 +1,2 @@
+rootProject.name = "ezetap_assignment"
+include ':app'
