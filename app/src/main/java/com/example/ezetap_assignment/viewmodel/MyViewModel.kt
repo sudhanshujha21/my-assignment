@@ -50,16 +50,15 @@ class MyViewModel(private val homeRepository: HomeRepository) : ViewModel() {
                     fetchLogoUrl.value = response.body()
                     Log.e("onResponse", " - > onResponse    ${fetchLogoUrl.value}")
                 }
+
             }
+
             override fun onFailure(call: Call<FetchImageURL?>, t: Throwable) {
-                Log.e("ListSize", " - > Error    " + t.message)
+                Log.e("ListSize", " - > Error    " + t.localizedMessage)
             }
         })
         return fetchLogoUrl
     }
-
-
-
 
 
 }

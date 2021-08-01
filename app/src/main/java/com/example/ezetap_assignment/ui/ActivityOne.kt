@@ -85,6 +85,7 @@ class ActivityOne : AppCompatActivity() {
                 })
             viewModel.errorMessage.observe(this,
                 {
+                    Log.e("errorMessage", "errorMessage: $it")
 
                 })
             viewModel.customUIData()
