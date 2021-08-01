@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.ezetap_assignment.R
@@ -86,6 +87,12 @@ class ActivityOne : AppCompatActivity() {
             viewModel.errorMessage.observe(this,
                 {
                     Log.e("errorMessage", "errorMessage: $it")
+                    Toast.makeText(
+                        this,
+                        "Opps! Something wrong in network server set up.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
 
                 })
             viewModel.customUIData()

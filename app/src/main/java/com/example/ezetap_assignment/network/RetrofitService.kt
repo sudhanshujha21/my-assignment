@@ -68,7 +68,7 @@ interface RetrofitService {
 
     companion object {
         //URL: https://demo.ezetap.com/mobileapps/android_assignment.json
-        private const val BASE_URL = "https://demo.ezetap.com/mobileapps/"
+        private const val BASE_URL = "https://demo/"
         var retrofitService: RetrofitService? = null
         fun getInstance(): RetrofitService {
             if (retrofitService == null) {

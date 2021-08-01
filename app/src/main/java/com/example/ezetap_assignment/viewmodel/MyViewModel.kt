@@ -17,7 +17,6 @@ class MyViewModel(private val homeRepository: HomeRepository) : ViewModel() {
     var customUIData: MutableLiveData<CustomUIData> = MutableLiveData<CustomUIData>()
     var fetchLogoUrl: MutableLiveData<FetchImageURL> = MutableLiveData<FetchImageURL>()
     val errorMessage = MutableLiveData<String>()
-    val logoUrl = MutableLiveData<String>()
 
 
     fun customUIData(): MutableLiveData<CustomUIData> {
@@ -55,6 +54,7 @@ class MyViewModel(private val homeRepository: HomeRepository) : ViewModel() {
 
             override fun onFailure(call: Call<FetchImageURL?>, t: Throwable) {
                 Log.e("ListSize", " - > Error    " + t.localizedMessage)
+                errorMessage.value = t.localizedMessage
             }
         })
         return fetchLogoUrl
